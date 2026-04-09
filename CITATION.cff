@@ -1,11 +1,11 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
+title: "Beyond the Next Step: A Multi-Criteria Generative Validation Framework for Step Selection Functions"
 authors:
   - family-names: "Nicosia"
     given-names: "Aurélien"
     affiliation: "Département de mathématiques et de statistique, Université Laval"
-    orcid: "https://orcid.org/0000-0000-0000-0000" # Update if you have an ORCID
-title: "Beyond the Next Step: A Multi-Criteria Generative Validation Framework for Step Selection Functions"
+license: MIT
 version: 1.0.0
 date-released: 2026-04-09
 note: "Code supporting the Methods in Ecology and Evolution publication."
