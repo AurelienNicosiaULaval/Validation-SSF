@@ -1,0 +1,23 @@
+=== MEE GitHub & Zenodo Checklist ===
+
+This archive is constructed STRICTLY from the official `MEE_Code` submission folder to guarantee exact correspondence with the accepted manuscript.
+
+GitHub SPECIFIC FILES ADDED:
+- .gitignore
+- LICENSE (MIT License)
+- CITATION.cff (Zenodo uses this to extract citation metadata)
+- README.md (Constructed specifically to reflect the final manuscript and repo framework)
+
+MANUAL REVIEW REQUIRED BEFORE PUSHING:
+[ ] Update the ORCID in `CITATION.cff` (if you have one).
+[ ] Replace 'AurelienNicosiaULaval/Validation-SSF' in `CITATION.cff`.
+[ ] Replace the '10.5281/zenodo.XXXXXXX' template in `README.md` once Zenodo gives you your DOI.
+
+TO PUSH TO GITHUB:
+1. cd mee_archive_submission
+2. git init
+3. git add .
+4. git commit -m 'Initial commit for MEE publication'
+5. git branch -M main
+6. git remote add origin https://github.com/AurelienNicosiaULaval/Validation-SSF.git
+7. git push -u origin main

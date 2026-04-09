@@ -1,0 +1,12 @@
+*.Rproj
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+.DS_Store
+output/*
+!output/.gitkeep
+*.rds
+*.Rproj
+*.DS_Store
+*.Rproj.user
