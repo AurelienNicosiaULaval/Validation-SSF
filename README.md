@@ -1,13 +1,11 @@
 # Beyond the Next Step: A Multi-Criteria Generative Validation Framework for Step Selection Functions
-
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19485572.svg)](https://doi.org/10.5281/zenodo.19485572)
 
 This repository contains the code required to reproduce the analyses, synthetic stress tests, and empirical case studies presented in the manuscript:
 
 > Nicosia, A. *Beyond the Next Step: A Multi-Criteria Generative Validation Framework for Step Selection Functions.* (Methods in Ecology and Evolution)
 
 ## Repository Structure
-
 This repository contains the canonical code associated with the paper, isolated into four categories:
 
 - **`Functions/`**: Contains `diagnose_issf.R`. This script defines the four-pillar validation framework (Wasserstein, MSD, sinuosity, barrier crossing) applied to standard iSSA.
@@ -20,15 +18,8 @@ This repository contains the canonical code associated with the paper, isolated 
 
 ## Dependencies
 The code requires **R** and standard movement ecology and spatial packages, notably:
+
 - `amt` (for iSSA fitting and the built-in red deer dataset)
 - `transport` (for Wasserstein distance calculation via the network simplex algorithm)
 - `terra`, `sf` (for spatial operations)
 - `ggplot2`, `patchwork` (for visualization)
-
-## Execution Order
-1. Start by loading the core validation function defined in `Functions/diagnose_issf.R` into your environment.
-2. Execute the synthetic tests located in `Simulations/` to recreate the stress-test results.
-3. Execute the empirical analysis via the script in `Data_Analysis/`.
-
-## License
-This project is licensed under the MIT License - see the `LICENSE` file for details.
