@@ -5,6 +5,14 @@ This repository contains the code required to reproduce the analyses, synthetic 
 
 > Nicosia, A. *Beyond the Next Step: A Multi-Criteria Generative Validation Framework for Step Selection Functions.* (Methods in Ecology and Evolution)
 
+## Part of the research ecosystem
+
+This repository is part of Aurélien Nicosia's open research and teaching ecosystem in computational statistics, scientific R software, reproducible data science and statistical education.
+
+* Research Lab: [https://aureliennicosiaulaval.github.io/web_site/research-lab.html](https://aureliennicosiaulaval.github.io/web_site/research-lab.html)
+* GitHub profile: [https://github.com/AurelienNicosiaULaval](https://github.com/AurelienNicosiaULaval)
+* Related projects: [`gmov`](https://github.com/AurelienNicosiaULaval/gmov), [`evalue-HMM`](https://github.com/AurelienNicosiaULaval/evalue-HMM)
+
 ## Repository Structure
 This repository contains the canonical code associated with the paper, isolated into four categories:
 
