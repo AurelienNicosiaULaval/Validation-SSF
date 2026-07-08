@@ -24,6 +24,18 @@ This repository contains the canonical code associated with the paper, isolated 
 
 *(Note: Red deer data utilized in the empirical application are acquired programmatically via the `amt` R package. There is no redundant raw `.csv` or `.rds` data file included in this repository.)*
 
+## Reproducibility overview
+
+This repository provides reproducible research material for the generative validation framework applied to SSF/iSSA analyses. It is not an R package; the scripts are intended to be run from the repository root.
+
+- Shared functions are stored in `Functions/`.
+- Synthetic stress-test simulations are stored in `Simulations/`.
+- The empirical red deer analysis is stored in `Data_Analysis/`.
+- Supplementary analyses are stored in `Supplementary/`.
+- Generated outputs are organized in `output/` or in script-specific result and figure folders created during execution.
+
+The main dependencies are listed below. The file `docs/sessionInfo.txt` records one reference R environment, but it does not replace a lockfile such as `renv.lock`. Some analyses may be time-consuming or depend on the local R and spatial software environment. No single-command workflow for full reproduction is provided.
+
 ## Dependencies
 The code requires **R** and standard movement ecology and spatial packages, notably:
 
