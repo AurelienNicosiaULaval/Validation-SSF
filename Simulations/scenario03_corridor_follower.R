@@ -14,7 +14,7 @@ library(sf)
 library(circular)
 library(mvtnorm)
 
-source("R/diagnose_issf.R")
+source("Functions/diagnose_issf.R")
 
 set.seed(777)
 

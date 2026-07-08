@@ -12,7 +12,7 @@ library(tidyverse)
 library(ggplot2)
 
 # Source the robust diagnostic function
-source("R/diagnose_issf.R")
+source("Functions/diagnose_issf.R")
 
 set.seed(2025)
 
