@@ -14,5 +14,5 @@ This folder contains the full code for the sensitivity analysis discussed in Sup
 Run from repository root with:
 
 ```r
-Rscript MEE_Code/Supplementary/S3/barrier_crossing_sensitivity.R
+Rscript Supplementary/S3/barrier_crossing_sensitivity.R
 ```

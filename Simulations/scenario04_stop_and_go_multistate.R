@@ -15,7 +15,7 @@ library(circular)
 library(mvtnorm)
 library(ggplot2)
 
-source("R/diagnose_issf.R")
+source("Functions/diagnose_issf.R")
 
 set.seed(777) # Same seed as scenario definitions across the manuscript scripts.
 

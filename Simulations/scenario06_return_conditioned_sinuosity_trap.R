@@ -13,7 +13,7 @@ library(terra)
 library(tidyverse)
 library(circular)
 
-source("R/diagnose_issf.R")
+source("Functions/diagnose_issf.R")
 
 # Reproducibility
 set.seed(20260213)

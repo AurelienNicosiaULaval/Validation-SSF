@@ -11,7 +11,7 @@ library(tidyverse)
 library(terra)
 library(parallel)
 
-source("R/diagnose_issf.R")
+source("Functions/diagnose_issf.R")
 set.seed(888)
 
 # Create figures directory

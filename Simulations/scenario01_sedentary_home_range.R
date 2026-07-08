@@ -16,7 +16,7 @@ library(circular)
 library(mvtnorm)
 
 # Source function implementing the generative validation workflow.
-source("R/diagnose_issf.R")
+source("Functions/diagnose_issf.R")
 
 set.seed(777)
 
