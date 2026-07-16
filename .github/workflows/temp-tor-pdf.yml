@@ -1,0 +1,47 @@
+name: Récupération des cinq PDF via Tor
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  download:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Installer Tor et les dépendances
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y tor
+          sudo systemctl start tor || sudo service tor start
+          python -m pip install --upgrade 'requests[socks]' pypdf
+          sleep 10
+      - name: Télécharger et valider les PDF
+        run: |
+          set +e
+          python temp_tor_pdf_recovery.py > run_tor.log 2>&1
+          status=$?
+          cat run_tor.log
+          exit $status
+      - name: Créer l'archive
+        if: always()
+        run: |
+          python - <<'PY'
+          import shutil
+          shutil.make_archive("notes-master-math-france-tor", "zip", "notes_master_math_france_tor")
+          PY
+      - name: Publier l'archive
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: notes-master-math-france-tor
+          path: |
+            notes-master-math-france-tor.zip
+            notes_master_math_france_tor/manifest.csv
+            notes_master_math_france_tor/manifest.json
+            run_tor.log
+          if-no-files-found: error
+          retention-days: 3
