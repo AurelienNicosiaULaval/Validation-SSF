@@ -1,0 +1,33 @@
+name: Récupération institutionnelle Trélat
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  download:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Installer les dépendances
+        run: python -m pip install --upgrade requests pypdf beautifulsoup4
+      - name: Télécharger depuis le dépôt institutionnel
+        run: |
+          set +e
+          python temp_dspace_trelat_recovery.py > run_dspace_trelat.log 2>&1
+          status=$?
+          cat run_dspace_trelat.log
+          exit $status
+      - name: Publier le PDF et le diagnostic
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: trelat-dspace
+          path: |
+            trelat_dspace/
+            run_dspace_trelat.log
+          if-no-files-found: error
+          retention-days: 3
