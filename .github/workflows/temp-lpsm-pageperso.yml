@@ -1,0 +1,42 @@
+name: Récupération temporaire LPSM pageperso
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  download:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Installer pypdf
+        run: python -m pip install --upgrade pypdf
+      - name: Télécharger les PDF LPSM
+        run: |
+          set +e
+          python temp_lpsm_pageperso_recovery.py > run_lpsm_pageperso.log 2>&1
+          status=$?
+          cat run_lpsm_pageperso.log
+          exit $status
+      - name: Créer l'archive
+        if: always()
+        run: |
+          python - <<'PY'
+          import shutil
+          shutil.make_archive("notes-master-math-france-lpsm-pageperso", "zip", "notes_master_math_france_lpsm_pageperso")
+          PY
+      - name: Publier l'archive
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: notes-master-math-france-lpsm-pageperso
+          path: |
+            notes-master-math-france-lpsm-pageperso.zip
+            notes_master_math_france_lpsm_pageperso/manifest.csv
+            notes_master_math_france_lpsm_pageperso/manifest.json
+            run_lpsm_pageperso.log
+          if-no-files-found: error
+          retention-days: 3
